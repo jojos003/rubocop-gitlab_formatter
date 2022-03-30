@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
 
+  spec.metadata['rubygems_mfa_required'] = 'true'
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   # spec.metadata["homepage_uri"] = spec.homepage
   # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
@@ -31,5 +31,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.add_development_dependency 'rubocop-rake', '~> 0.6'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.9'
 end
