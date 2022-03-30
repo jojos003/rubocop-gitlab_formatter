@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubocop'
 require 'rubocop/formatter/base_formatter'
 

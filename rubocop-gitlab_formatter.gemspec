@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name = "rubocop-gitlab_formatter"
-  spec.version = "0.0.1"
-  spec.authors = ["Jonathan GEORGES"]
-  spec.email = ["jojos003@free.fr"]
+  spec.name = 'rubocop-gitlab_formatter'
+  spec.version = '0.0.1'
+  spec.authors = ['Jonathan GEORGES']
+  spec.email = ['jojos003@free.fr']
 
-  spec.summary = "A very simple RuboCop formatter for GitLab code quality artifact"
-  spec.description = "A very simple RuboCop formatter for GitLab code quality artifact"
+  spec.summary = 'A very simple RuboCop formatter for GitLab code quality artifact'
+  spec.description = 'A very simple RuboCop formatter for GitLab code quality artifact'
   # spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.license = 'MIT'
+  spec.required_ruby_version = '>= 2.6.0'
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
@@ -25,10 +25,11 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency "rubocop", "~> 1.0"
+  spec.add_runtime_dependency 'rubocop', '~> 1.0'
 
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
