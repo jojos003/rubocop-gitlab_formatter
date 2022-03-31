@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['Jonathan Georges']
   spec.email = ['jojos003@free.fr']
 
-  spec.summary = 'A very simple RuboCop formatter for GitLab code quality artifact'
-  spec.description = 'A very simple RuboCop formatter for GitLab code quality artifact'
+  spec.summary = 'A RuboCop formatter for GitLab CodeQuality reports'
+  spec.description = 'A very simple RuboCop formatter that renders a json compliant with the Gitlab CodeQuality format.'
   spec.homepage = 'https://github.com/jojos003/rubocop-gitlab_formatter'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
