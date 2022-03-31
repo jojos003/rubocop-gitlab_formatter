@@ -1,22 +1,54 @@
-# Rubocop::GitlabFormatter
+# RuboCop GitLab Formatter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop/gitlab_formatter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A very simple [RuboCop](https://github.com/rubocop/rubocop) formatter that renders a json compliant with the [Gitlab CodeQuality format](https://docs.gitlab.com/ee/user/project/merge_requests/code_quality.html#implementing-a-custom-tool).
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add this line to your application's Gemfile:
 
-    $ bundle add rubocop-gitlab_formatter
+```ruby
+gem 'rubocop-gitlab_formatter', require: false
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+And then execute:
 
-    $ gem install rubocop-gitlab_formatter
+```sh
+$ bundle
+```
+
+Or install it yourself as:
+
+```ruby
+$ gem install rubocop-gitlab_formatter
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```sh
+rubocop --require rubocop-gitlab_formatter --format RuboCop::Formatter::GitLabFormatter
+```
+
+Or require it in `.rubocop.yml`:
+
+```yaml
+require:
+  - rubocop-gitlab_formatter
+```
+
+The main purpose of the formatter is to be used with the [GitLab code quality](https://docs.gitlab.com/ee/user/project/merge_requests/code_quality.html) report.
+
+Configure your `.gitlab-ci.yml` like that:
+
+```yaml
+rubocop:
+  artifacts:
+    reports:
+      codequality: codequality_reports.json
+  script:
+    - rubocop --require rubocop-gitlab_formatter --format RuboCop::Formatter::GitLabFormatter --out codequality_reports.json
+```
+
+And enjoy the Code Quality features :tada:
 
 ## Development
 
@@ -26,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rubocop-gitlab_formatter.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jojos003/rubocop-gitlab_formatter.
 
 ## License
 
