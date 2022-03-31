@@ -17,34 +17,38 @@ module RuboCop
         F: 'blocker'
       }.freeze
 
+      attr_reader :output_array
+
       def initialize(output, options = {})
         super
 
-        @output_json = []
+        @output_array = []
       end
 
       def file_finished(file, offenses)
         offenses.each do |offense|
-          @output_json << build_offense(file, offense)
+          output_array << hash_for_offense(file, offense)
         end
       end
 
       def finished(_inspected_files)
-        output.write @output_json.to_json
+        output.write output_array.to_json
       end
 
-      private
-
-      def build_offense(file, offense)
+      def hash_for_offense(file, offense)
         {
           description: offense.message,
           fingerprint: offense.hash,
           severity: SEVERITY_MAPPING[offense.severity.code.to_sym],
-          location: {
-            path: smart_path(file),
-            lines: {
-              begin: offense.location.line
-            }
+          location: hash_for_location(file, offense.location)
+        }
+      end
+
+      def hash_for_location(file, location)
+        {
+          path: smart_path(file),
+          lines: {
+            begin: location.line
           }
         }
       end
