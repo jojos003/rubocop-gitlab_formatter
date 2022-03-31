@@ -5,6 +5,8 @@ require 'rubocop/formatter/base_formatter'
 
 module RuboCop
   module Formatter
+    # A very simple RuboCop formatter for use with GitLab code quality artifact
+    # @see https://docs.gitlab.com/ee/user/project/merge_requests/code_quality.html#implementing-a-custom-tool
     class GitLabFormatter < BaseFormatter
       include PathUtil
 
