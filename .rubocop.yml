@@ -6,3 +6,7 @@ AllCops:
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
+
+Naming/FileName:
+  Exclude:
+    - lib/rubocop-gitlab_formatter.rb
