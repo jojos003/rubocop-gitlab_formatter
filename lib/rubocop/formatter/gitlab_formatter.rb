@@ -40,7 +40,7 @@ module RuboCop
       def hash_for_offense(file, offense)
         {
           description: offense.message,
-          fingerprint: offense.hash,
+          fingerprint: offense.hash.to_s,
           severity: SEVERITY_MAPPING[offense.severity.code.to_sym],
           location: hash_for_location(file, offense.location)
         }
