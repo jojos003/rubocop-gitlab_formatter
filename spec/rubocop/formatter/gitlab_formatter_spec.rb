@@ -58,6 +58,10 @@ RSpec.describe RuboCop::Formatter::GitLabFormatter do
       expect(hash[:description]).to eq 'This is message'
     end
 
+    it 'sets check_name' do
+      expect(hash[:check_name]).to eq 'CopName'
+    end
+
     it 'sets fingerprint' do
       expect(hash[:fingerprint]).to eq offense.hash.to_s
     end
