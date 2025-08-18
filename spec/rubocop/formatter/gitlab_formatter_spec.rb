@@ -59,7 +59,7 @@ RSpec.describe RuboCop::Formatter::GitLabFormatter do
     end
 
     it 'sets fingerprint' do
-      expect(hash[:fingerprint]).to eq offense.hash
+      expect(hash[:fingerprint]).to eq offense.hash.to_s
     end
 
     it 'sets severity' do
