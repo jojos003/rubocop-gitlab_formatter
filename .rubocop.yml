@@ -5,7 +5,8 @@ AllCops:
   NewCops: enable
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods:
+    - describe
 
 Naming/FileName:
   Exclude:
