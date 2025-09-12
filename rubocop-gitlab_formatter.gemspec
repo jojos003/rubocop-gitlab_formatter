@@ -22,10 +22,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rubocop', '~> 1.0'
 
-  # rubocop:disable Gemspec/DevelopmentDependencies
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop-rake', '~> 0.6'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.9'
-  # rubocop:enable Gemspec/DevelopmentDependencies
 end

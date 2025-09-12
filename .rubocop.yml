@@ -4,6 +4,9 @@ require:
 AllCops:
   NewCops: enable
 
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
 Metrics/BlockLength:
   AllowedMethods:
     - describe
