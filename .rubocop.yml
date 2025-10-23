@@ -1,6 +1,10 @@
 require:
   - ./lib/rubocop/formatter/gitlab_formatter
 
+plugins:
+  - rubocop-rake
+  - rubocop-rspec
+
 AllCops:
   NewCops: enable
 
@@ -14,3 +18,9 @@ Metrics/BlockLength:
 Naming/FileName:
   Exclude:
     - lib/rubocop-gitlab_formatter.rb
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - spec/rubocop/formatter/gitlab_formatter_spec.rb
