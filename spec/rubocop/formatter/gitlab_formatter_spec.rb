@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe RuboCop::Formatter::GitLabFormatter do
-  subject(:formatter) { described_class.new(output) }
+  let(:formatter) { described_class.new(output) }
 
   let(:output) { StringIO.new }
 
@@ -22,18 +22,18 @@ RSpec.describe RuboCop::Formatter::GitLabFormatter do
     let(:output_array) { formatter.output_array }
     let(:offenses) do
       [
-        instance_double('RuboCop::Cop::Offense'),
-        instance_double('RuboCop::Cop::Offense')
+        instance_double(RuboCop::Cop::Offense),
+        instance_double(RuboCop::Cop::Offense)
       ]
     end
 
     before do
-      allow(formatter).to receive(:hash_for_offense) { {} }
+      allow(formatter).to receive(:hash_for_offense).and_return({})
     end
 
     it 'adds offenses to #output_array' do
       expect { file_finished }
-        .to change { output_array.count }
+        .to change(output_array, :count)
         .from(0).to(2)
     end
   end
