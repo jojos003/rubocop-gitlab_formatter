@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = 'rubocop-gitlab_formatter'
-  spec.version = '0.1.0'
+  spec.version = '0.1.1'
   spec.authors = ['Jonathan Georges']
   spec.email = ['jojos003@free.fr']
 
